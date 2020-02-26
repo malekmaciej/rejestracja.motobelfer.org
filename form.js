@@ -30,6 +30,9 @@ function submitToAPI(e) {
       url : "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default//workshop-rejestracja",
       dataType: "json",
       crossDomain: "true",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "http://rejestracja.motobelfer.org" },
       useDefaultXhrHeader: false,
       contentType: "application/json; charset=utf-8",
       async: false,
