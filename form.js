@@ -1,6 +1,6 @@
 function submitToAPI(e) {
     e.preventDefault();
-    var URL = "https://mvbiuixes7.execute-api.eu-central-1.amazonaws.com/01";
+    var URL = "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default//workshop-rejestracja";
 
          var Namere = /[A-Za-z]{1}[A-Za-z]/;
          if (!Namere.test($("#name-input").val())) {
@@ -27,7 +27,7 @@ function submitToAPI(e) {
 
     $.ajax({
       type: "POST",
-      url : "https://mvbiuixes7.execute-api.eu-central-1.amazonaws.com/01",
+      url : "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default//workshop-rejestracja",
       dataType: "json",
       crossDomain: "true",
       useDefaultXhrHeader: false,
@@ -35,10 +35,11 @@ function submitToAPI(e) {
       async: false,
       data: JSON.stringify(data),
       statusCode: {
-            200: function() {
-                alert("Wyslano zgloszenie, dziekuje!");
+            200: function(response) {
+                alert(response);
+                $("#result").html(response);
             },
-            400: function() {
+            400: function(response) {
                 alert("Wastapił bład przy wysyłaniu - proszę napisz do maciej.malek@motorolasolutions.com")
             }
       }});
