@@ -27,15 +27,15 @@ function submitToAPI(e) {
 
     $.ajax({
       type: "POST",
-      url : "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default//workshop-rejestracja",
+      url : "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default/workshop-rejestracja",
       dataType: "json",
-      crossDomain: "true",
+      crossDomain: true,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://rejestracja.motobelfer.org" },
-      useDefaultXhrHeader: false,
+        "Access-Control-Allow-Origin": "http://rejestracja.motobelfer.org",
+        "Access-Control-Allow-Headers": "X-Custom-Header"},
       contentType: "application/json; charset=utf-8",
-      async: false,
+      async: true,
       data: JSON.stringify(data),
       statusCode: {
             200: function(response) {
@@ -43,7 +43,7 @@ function submitToAPI(e) {
                 $("#result").html(response);
             },
             400: function(response) {
-                alert("Wastapił bład przy wysyłaniu - proszę napisz do maciej.malek@motorolasolutions.com")
+                alert("Wystapil blad przy wysylaniu - prosze napisz do maciej.malek@motorolasolutions.com")
             }
       }});
   }
