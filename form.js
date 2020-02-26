@@ -49,5 +49,5 @@ function submitToAPI(e) {
     .done(function(response) {
         console.log(response);
         $("#result").html(response);
-        }),;
+        });
   }
