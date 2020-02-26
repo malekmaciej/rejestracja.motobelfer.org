@@ -45,5 +45,9 @@ function submitToAPI(e) {
             400: function(response) {
                 alert("Wystapil blad przy wysylaniu - prosze napisz do maciej.malek@motorolasolutions.com")
             }
-      }});
+      }})
+    .done(function(response) {
+        console.log(response);
+        $("#result").html(response);
+        }),;
   }
