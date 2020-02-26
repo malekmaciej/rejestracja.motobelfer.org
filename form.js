@@ -1,6 +1,6 @@
 function submitToAPI(e) {
     e.preventDefault();
-    var URL = "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default//workshop-rejestracja";
+    var URL = "https://mvbiuixes7.execute-api.eu-central-1.amazonaws.com/01/workshop-rejestracja";
 
          var Namere = /[A-Za-z]{1}[A-Za-z]/;
          if (!Namere.test($("#name-input").val())) {
@@ -27,7 +27,7 @@ function submitToAPI(e) {
 
     $.ajax({
       type: "POST",
-      url : "https://76y0ftzr54.execute-api.eu-central-1.amazonaws.com/default/workshop-rejestracja",
+      url : "https://mvbiuixes7.execute-api.eu-central-1.amazonaws.com/01/rejestracja",
       dataType: "json",
       crossDomain: true,
       headers: {
