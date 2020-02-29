@@ -2,6 +2,7 @@ function submitToAPI(e) {
     e.preventDefault();
     var URL = "https://mvbiuixes7.execute-api.eu-central-1.amazonaws.com/01/rejestracja";
 
+
          var Namere = /[A-Za-z]{1}[A-Za-z]/;
          if (!Namere.test($("#name-input").val())) {
                       alert ("Imie i Nazwisko za krotkie.");
@@ -38,7 +39,7 @@ function submitToAPI(e) {
         "Access-Control-Allow-Origin":"rejestracja.motobelfer.org"},
       useDefaultXhrHeader: false,
       contentType: "application/json; charset=utf-8",
-      async: false,
+      async: true,
       data: JSON.stringify(data),
       statusCode: {
             200: function(response) {
@@ -69,3 +70,4 @@ function submitToAPI(e) {
       }
     });
 }
+
