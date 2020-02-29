@@ -15,7 +15,7 @@ function submitToAPI(e) {
 
          var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
          if (!reeamil.test($("#email-input").val())) {
-             alert ("Please enter valid email address");
+             alert ("Bledny adres email.");
              return;
          }
 
@@ -45,7 +45,6 @@ function submitToAPI(e) {
             200: function(response) {
                 console.log(response);
                 var htmlString = "";
-      
                 htmlString += '<p>Dane do logowania się do AWS Management Console:</p><p><b>URL: </b><a href="https://521762730475.signin.aws.amazon.com/console" target=”_blank”>https://521762730475.signin.aws.amazon.com/console</a>';
                 htmlString += "<p><b>IAM user name: </b><pre>" + response.email + "</pre></p>";
                 htmlString += "<p><b>Password: </b><pre>" + response.password + "</pre></p>";
@@ -59,11 +58,10 @@ function submitToAPI(e) {
                 htmlString += "<p>Pozdrawiam<br>Maciej Malek</p>";
                 accountdetails.insertAdjacentHTML('beforeend', htmlString);
             },
-            400: function(response) {
-                alert("Wastapił bład przy wysyłaniu - proszę napisz do maciej.malek@motorolasolutions.com");
+            401: function(response) {
                 var htmlString = "";
                 htmlString += 'Wystapil blad przy zakladaniu konta.';
-                htmlString += "<pre>" + "response.error" + "</pre>";
+                htmlString += "<pre>" + "Bledne haslo !!" + "</pre>";
                 htmlString += "Napisz prosze mail do maciej.malek@motorolasolutions.com"
                 accountdetails.insertAdjacentHTML('beforeend', htmlString);
             }
