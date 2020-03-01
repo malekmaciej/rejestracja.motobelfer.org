@@ -64,6 +64,12 @@ function submitToAPI(e) {
                 htmlString += "<pre>" + "Bledne haslo !!" + "</pre>";
                 htmlString += "Napisz prosze mail do maciej.malek@motorolasolutions.com"
                 accountdetails.insertAdjacentHTML('beforeend', htmlString);
+            },
+            409: function(response) {
+                var htmlString = "";
+                htmlString += 'Wystapil blad przy zakladaniu konta.';
+                htmlString += "<pre>" + "Taki uzytkownik juz istnieje !!" + "</pre>";
+                accountdetails.insertAdjacentHTML('beforeend', htmlString);
             }
       }
     });
